@@ -165,6 +165,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C-中的左值与右值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/27/C-%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC/">C 中的左值与右值”</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/27/C-%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC/" class="archive-article-date">
+  	<time datetime="2020-02-27T01:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="左值与右值"><a href="#左值与右值" class="headerlink" title="左值与右值"></a>左值与右值</h1><p><strong>左值与右值简单来理解就是<code>=</code>左边是左值，右边是右值。</strong></p>
+<h3 id="“-”"><a href="#“-”" class="headerlink" title="“=”"></a>“=”</h3><p>赋值表达式的目的就是将右边的值赋到左边的位置上。可见左值是一个位置，而右值是一个值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = b + <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
+<p>a是一个左值，它标识了一个可以存储结果值的地点。而b+25是一个可以求值的表达式。</p>
+<p>它们可以互换吗？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b + <span class="number">25</span> = a;</span><br></pre></td></tr></table></figure>
+<p>a可以做右值，但b不可以做左值，因为他没有标识一个明确的位置。</p>
+<hr>
+<p>那么我们可以认为左值就不能是表达式吗？<br>这样判断并不准确。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">3</span>;</span><br><span class="line">...</span><br><span class="line">a[b+<span class="number">10</span>] = <span class="number">0</span>;</span><br><span class="line">-------------------------------------------------------------------------------------</span><br><span class="line"><span class="keyword">int</span> a,*p;</span><br><span class="line">...</span><br><span class="line"> p = &amp;a;</span><br><span class="line">*p = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<p>显然，表达式也可以做左值，只要它的值是内存中的某个特定的地址。</p>
+<p><strong>左值意味着一个位置，右值意味着一个值。<br>在使用右值的地方可以用左值，反过来却不行。</strong></p>
+<p>###example</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((a++)++)+b</span><br></pre></td></tr></table></figure>
+<p>在编译后，编译器会为<code>a</code>创建一个临时值，相当于引用，它没有内存地址，所以不能作左值。这个语句是非法的。</p>
+<p>#由来 </p>
+<h3 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h3><blockquote>
+<p>用于储存值的数据存储区域统称为数据对象</p>
+</blockquote>
+<h3 id="左值（lvalue）"><a href="#左值（lvalue）" class="headerlink" title="左值（lvalue）"></a>左值（lvalue）</h3><blockquote>
+<p>用于标识特定数据对象的名称或表达式</p>
+<p>==所以，对象指的是实际的数据存储，而<strong>左值</strong> 是用于标识或定位存储位置的标签==</p>
+</blockquote>
+<h4 id="早期的C中的左值意味着"><a href="#早期的C中的左值意味着" class="headerlink" title="早期的C中的左值意味着"></a>早期的C中的左值意味着</h4><ol>
+<li>它指定一个对象，引用内存中的地址。[^1]</li>
+<li>它可用在赋值运算符的左侧。<br>[^1]:来自《C prime plus》</li>
+</ol>
+<p>后来标准中增加了<code>const</code>，第二条条件不满足了。于是新增了一个术语，可修改的左值(modifiable lvalue)。当前标准建议，使用术语对象定位值(object locator value)。</p>
+<p>注意：我们不可对<code>const</code>的值进行赋值，但可以初始化。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Two = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>这样不违规。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25729602&auto=0&height=66"></iframe>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/27/C-%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
