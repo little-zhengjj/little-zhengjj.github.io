@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C 中的左值与右值” | Hexo</title>
+  <title>C 中的左值与右值 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="左值与右值左值与右值简单来理解就是&#x3D;左边是左值，右边是右值。">
+  <meta name="description" content="左值与右值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C 中的左值与右值”">
+<meta property="og:title" content="C 中的左值与右值">
 <meta property="og:url" content="http://yoursite.com/2020/02/27/C-%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="左值与右值左值与右值简单来理解就是&#x3D;左边是左值，右边是右值。">
+<meta property="og:description" content="左值与右值">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-27T01:45:56.000Z">
-<meta property="article:modified_time" content="2020-02-27T12:55:15.506Z">
+<meta property="article:modified_time" content="2020-02-27T13:00:04.947Z">
 <meta property="article:author" content="CPPigSnail">
 <meta name="twitter:card" content="summary">
   
@@ -179,7 +179,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      C 中的左值与右值”
+      C 中的左值与右值
     </h1>
   
 
@@ -192,9 +192,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="左值与右值"><a href="#左值与右值" class="headerlink" title="左值与右值"></a>左值与右值</h1><p><strong>左值与右值简单来理解就是<code>=</code>左边是左值，右边是右值。</strong></p>
-<a id="more"></a>
+        <h1 id="左值与右值"><a href="#左值与右值" class="headerlink" title="左值与右值"></a>左值与右值</h1><a id="more"></a>
 
+<p><strong>左值与右值简单来理解就是<code>=</code>左边是左值，右边是右值。</strong></p>
 <h3 id="“-”"><a href="#“-”" class="headerlink" title="“=”"></a>“=”</h3><p>赋值表达式的目的就是将右边的值赋到左边的位置上。可见左值是一个位置，而右值是一个值。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = b + <span class="number">25</span>;</span><br></pre></td></tr></table></figure>
 <p>a是一个左值，它标识了一个可以存储结果值的地点。而b+25是一个可以求值的表达式。</p>
@@ -203,11 +203,11 @@
 <p>a可以做右值，但b不可以做左值，因为他没有标识一个明确的位置。</p>
 <hr>
 <p>那么我们可以认为左值就不能是表达式吗？<br>这样判断并不准确。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">3</span>;</span><br><span class="line">...</span><br><span class="line">a[b+<span class="number">10</span>] = <span class="number">0</span>;</span><br><span class="line">-------------------------------------------------------------------------------------</span><br><span class="line"><span class="keyword">int</span> a,*p;</span><br><span class="line">...</span><br><span class="line"> p = &amp;a;</span><br><span class="line">*p = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">3</span>;</span><br><span class="line">...</span><br><span class="line">a[b+<span class="number">10</span>] = <span class="number">0</span>;</span><br><span class="line">-------------------------------------------------------------------------------------</span><br><span class="line"><span class="keyword">int</span> a,*p;</span><br><span class="line">...</span><br><span class="line"> p = &amp;a;</span><br><span class="line">*p = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 <p>显然，表达式也可以做左值，只要它的值是内存中的某个特定的地址。</p>
 <p><strong>左值意味着一个位置，右值意味着一个值。<br>在使用右值的地方可以用左值，反过来却不行。</strong></p>
 <p>###example</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((a++)++)+b</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((a++)++)+b</span><br></pre></td></tr></table></figure>
 <p>在编译后，编译器会为<code>a</code>创建一个临时值，相当于引用，它没有内存地址，所以不能作左值。这个语句是非法的。</p>
 <p>#由来 </p>
 <h3 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h3><blockquote>
