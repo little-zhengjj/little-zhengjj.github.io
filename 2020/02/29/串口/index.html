@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582978816137&amp;di=9530aaf4ff939bc5080156126a8fa33e&amp;imgtype=0&amp;src=http%253A%252F%252Fimg.bimg.126.net%252Fphoto%252FUT1o4Ycs-kLBpw7t414pug%253D%253D%252F5778681271870322097.jpg">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582979747686&amp;di=804ba262f13a5baf053be3b952030508&amp;imgtype=0&amp;src=http%253A%252F%252Fwww.sddgks.com%252Fuploads%252F2018052314%252F2018052314374247395.jpg">
 <meta property="article:published_time" content="2020-02-29T08:58:51.000Z">
-<meta property="article:modified_time" content="2020-02-29T12:01:24.321Z">
+<meta property="article:modified_time" content="2020-03-01T02:22:15.106Z">
 <meta property="article:author" content="CPPigSnail">
 <meta property="article:tag" content="单片机">
 <meta name="twitter:card" content="summary">
@@ -211,7 +211,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="串口通信"><a href="#串口通信" class="headerlink" title="串口通信"></a>串口通信</h2><a id="more"></a>
+        <h1 id="串口通信"><a href="#串口通信" class="headerlink" title="串口通信"></a>串口通信</h1><a id="more"></a>
 <p>串口的工作方式有四种，这里只讲工作方式一。</p>
 <h2 id="串口中断"><a href="#串口中断" class="headerlink" title="串口中断"></a>串口中断</h2><h3 id="了解锁存中断标志寄存器SCON"><a href="#了解锁存中断标志寄存器SCON" class="headerlink" title="了解锁存中断标志寄存器SCON"></a>了解锁存中断标志寄存器SCON</h3><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1582978016309&amp;di=7bb728ca87ea633b5338fd4f27b4fd02&amp;imgtype=0&amp;src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20190219%2Ffa27e50887d2413983e424794e4d46b3.png" alt="图片"></p>
 <p><code>TI(transmit interrupt),RI(receive interrupt)</code>是中断标志位，当串行口接收完一帧数据时，<code>RI</code>置1，当串行口发送完一帧数据后，<code>TI</code>置1。两者都是硬件置1，但是也都只能软件清0。</p>
@@ -367,7 +367,7 @@ T1溢出率=fosc/[12*(256-TH1)]</script><script type="math/tex; mode=display">
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#串口通信"><span class="toc-number">1.</span> <span class="toc-text">串口通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串口中断"><span class="toc-number">2.</span> <span class="toc-text">串口中断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#了解锁存中断标志寄存器SCON"><span class="toc-number">2.1.</span> <span class="toc-text">了解锁存中断标志寄存器SCON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断函数"><span class="toc-number">2.2.</span> <span class="toc-text">中断函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4种工作方式"><span class="toc-number">2.3.</span> <span class="toc-text">4种工作方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用波特率如下"><span class="toc-number">2.3.0.1.</span> <span class="toc-text">常用波特率如下</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#串口通信"><span class="toc-number">1.</span> <span class="toc-text">串口通信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#串口中断"><span class="toc-number">1.1.</span> <span class="toc-text">串口中断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#了解锁存中断标志寄存器SCON"><span class="toc-number">1.1.1.</span> <span class="toc-text">了解锁存中断标志寄存器SCON</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中断函数"><span class="toc-number">1.1.2.</span> <span class="toc-text">中断函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4种工作方式"><span class="toc-number">1.1.3.</span> <span class="toc-text">4种工作方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#常用波特率如下"><span class="toc-number">1.1.3.0.1.</span> <span class="toc-text">常用波特率如下</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
