@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>链表 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="简单链表介绍">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/02/23/hello-world/index.html">
+<meta property="og:title" content="链表">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="简单链表介绍">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-22T22:13:57.960Z">
-<meta property="article:modified_time" content="2020-02-26T23:54:54.715Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583292053894&amp;di=a6a10f15de1bf24affe2844eeaee6463&amp;imgtype=jpg&amp;src=http%253A%252F%252Fimg0.imgtn.bdimg.com%252Fit%252Fu%253D1282674340%252C2388810186%2526fm%253D214%2526gp%253D0.jpg">
+<meta property="article:published_time" content="2020-03-04T00:20:34.000Z">
+<meta property="article:modified_time" content="2020-03-06T05:08:44.080Z">
 <meta property="article:author" content="CPPigSnail">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583292053894&amp;di=a6a10f15de1bf24affe2844eeaee6463&amp;imgtype=jpg&amp;src=http%253A%252F%252Fimg0.imgtn.bdimg.com%252Fit%252Fu%253D1282674340%252C2388810186%2526fm%253D214%2526gp%253D0.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -192,35 +195,34 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-链表" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      链表
     </h1>
   
 
         
-        <a href="/2020/02/23/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-22T22:13:57.960Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
+        <a href="/2020/03/04/%E9%93%BE%E8%A1%A8/" class="archive-article-date">
+  	<time datetime="2020-03-04T00:20:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="简单链表介绍"><a href="#简单链表介绍" class="headerlink" title="简单链表介绍"></a>简单链表介绍</h1><a id="more"></a>
+<h2 id="抽象数据类型-Abstract-Data-Type-ADT"><a href="#抽象数据类型-Abstract-Data-Type-ADT" class="headerlink" title="抽象数据类型(Abstract Data Type,ADT)"></a>抽象数据类型<code>(Abstract Data Type,ADT)</code></h2><p>ADT就是一个抽象的数据类型，类型包括两类信息：属性和操作。我们现在要定义一个新的类型，<br/></p>
+<ol>
+<li>是要提供储存结构的方法。</li>
+<li>是要提供操作数据的法。<br/>简单来说，就是我们要自己去定义一个新的类型，而且要对这个类型写一些可以操作的函数。</li>
+</ol>
+<h2 id="表ADT"><a href="#表ADT" class="headerlink" title="表ADT"></a>表ADT</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583292053894&amp;di=a6a10f15de1bf24affe2844eeaee6463&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D1282674340%2C2388810186%26fm%3D214%26gp%3D0.jpg" alt=""></p>
+<p>顺序插入结点的步骤<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>*<span class="title">head</span>=(<span class="title">struct</span> <span class="title">Node</span>*)<span class="title">malloc</span>(<span class="title">struct</span> <span class="title">Node</span>*);</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>*<span class="title">r</span>;</span></span><br><span class="line">r=head;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>*<span class="title">p</span>=(<span class="title">struct</span> <span class="title">Node</span>*)<span class="title">malloc</span>(<span class="title">struct</span> <span class="title">Node</span>*);</span></span><br><span class="line">r-&gt;next=p;</span><br><span class="line">r=p;</span><br><span class="line">r-&gt;next=<span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure><br>用<code>head</code>来纪录表头，<code>r</code>来遍历链表，<code>p</code>是新建的结点。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>*<span class="title">head</span>=(<span class="title">struct</span> <span class="title">Node</span>*)<span class="title">malloc</span>(<span class="title">struct</span> <span class="title">Node</span>*);</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>*<span class="title">r</span>;</span></span><br><span class="line">r=head;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>*<span class="title">p</span>=(<span class="title">struct</span> <span class="title">Node</span>*)<span class="title">malloc</span>(<span class="title">struct</span> <span class="title">Node</span>*);</span></span><br><span class="line">p-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">r-&gt;next=p;</span><br><span class="line">r=p;</span><br></pre></td></tr></table></figure><br>这里在<code>p</code>新建时就让<code>next</code>为空。可以做到最后一个结点的<code>next</code>指针为空。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">struct ListNode *<span class="title">deletem</span><span class="params">( struct ListNode *L, <span class="keyword">int</span> m )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">record</span>,*<span class="title">a</span>;</span></span><br><span class="line">    a=L;</span><br><span class="line">    <span class="keyword">while</span>(a)</span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="keyword">if</span>(a-&gt;data==m)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(a==L)</span><br><span class="line">                L=a-&gt;next;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                record-&gt;next=a-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            record=a;</span><br><span class="line">        &#125;</span><br><span class="line">        a=a-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> L;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>删除链表中<code>data</code>为<code>m</code>的元素。</p>
 
       
 
@@ -250,6 +252,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -300,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://little-zhengjj.github.io//02/23/hello-world/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://little-zhengjj.github.io//03/04/%E9%93%BE%E8%A1%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,15 +327,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/03/06/%E5%A3%B0%E6%98%8E%E4%B8%8E%E5%AE%9A%E4%B9%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          我的第一篇博客文章
+          定义与声明
         
       </div>
     </a>
   
+  
+    <a href="/2020/03/02/%E9%80%92%E5%BD%92/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">递归</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -347,7 +365,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简单链表介绍"><span class="toc-number">1.</span> <span class="toc-text">简单链表介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象数据类型-Abstract-Data-Type-ADT"><span class="toc-number">1.1.</span> <span class="toc-text">抽象数据类型(Abstract Data Type,ADT)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表ADT"><span class="toc-number">1.2.</span> <span class="toc-text">表ADT</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
