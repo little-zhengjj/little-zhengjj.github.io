@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>数组的循环右移 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/page/2/index.html">
+  <meta name="description" content="数组循环右移带来的思维转变题目 一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​ A​1​​ ⋯A​N−1​​ ）变换为（A​N−M​​ ⋯A​N−1​​ A​0​​ A​1​​ ⋯A​N−M−1​​ ）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？  例输">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组的循环右移">
+<meta property="og:url" content="http://yoursite.com/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数组循环右移带来的思维转变题目 一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​ A​1​​ ⋯A​N−1​​ ）变换为（A​N−M​​ ⋯A​N−1​​ A​0​​ A​1​​ ⋯A​N−M−1​​ ）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？  例输">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-19T09:17:20.000Z">
+<meta property="article:modified_time" content="2020-03-19T09:42:23.536Z">
 <meta property="article:author" content="CPPigSnail">
+<meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -188,35 +193,68 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-数组的循环右移" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/28/C%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%E8%B4%AA%E5%BF%83%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-28T02:26:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/C%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%E8%B4%AA%E5%BF%83%E6%B3%95/">C 编译器判断符号贪心法</a>
+    <h1 class="article-title" itemprop="name">
+      数组的循环右移
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/" class="archive-article-date">
+  	<time datetime="2020-03-19T09:17:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组循环右移带来的思维转变"><a href="#数组循环右移带来的思维转变" class="headerlink" title="数组循环右移带来的思维转变"></a>数组循环右移带来的思维转变</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A<br>​0<br>​​ A<br>​1<br>​​ ⋯A<br>​N−1<br>​​ ）变换为（A<br>​N−M<br>​​ ⋯A<br>​N−1<br>​​ A<br>​0<br>​​ A<br>​1<br>​​ ⋯A<br>​N−M−1<br>​​ ）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+</blockquote>
+<h2 id="例"><a href="#例" class="headerlink" title="例"></a>例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>&gt;<br>6 2<br/><br>1 2 3 4 5 6</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>&gt;<br>5 6 1 2 3 4</p>
+<hr>
+<p>正常人的思维是，创一个能装<code>N</code>个数的数组，再循环移动<code>M</code>次。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;num);</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[n];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++M</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;<span class="built_in">array</span>[i]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)</span><br><span class="line">&#123;</span><br><span class="line">    a=<span class="built_in">array</span>[n<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)</span><br><span class="line">        <span class="built_in">array</span>[j+<span class="number">1</span>]=<span class="built_in">array</span>[j];</span><br><span class="line">    <span class="built_in">array</span>[<span class="number">0</span>]=a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,<span class="built_in">array</span>[i]);</span><br><span class="line">    <span class="keyword">if</span>(i==n<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这样如果输入的数很大，会非常麻烦。</p>
+<p>那怎么去减少循环呢？</p>
+<ol>
+<li>数组的输入与输出肯定是要循环的，那只能去除，或者合并掉中间的那层循环。</li>
+<li>不要中间的循环怎么写？</li>
+</ol>
+<p>我们可以在创建输入之前就定好位置，循环<code>M</code>次，第一个位置就向右移了<code>M</code>位，那么我们可以先找到移动后原来第一位应该在哪里，然后再依次输入就可以了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line"><span class="keyword">int</span> temp[n];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    m=m%n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;temp[m]);</span><br><span class="line">    m++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> count=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,temp[i]);</span><br><span class="line">    <span class="keyword">if</span>(count&lt;n)</span><br><span class="line">    &#123; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        count++;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><code>m%=n</code>这一步很重要，开始与前面空出的位置输入都是靠它。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -228,136 +266,118 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://little-zhengjj.github.io//03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/27/C-%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC/" class="archive-article-date">
-  	<time datetime="2020-02-27T01:45:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/18/%E7%94%A8for%E8%BE%93%E5%87%BA%E6%AD%A3%E4%B8%89%E8%A7%92%E4%B8%8E%E5%80%92%E4%B8%89%E8%A7%92%E7%9A%84%E4%B8%8D%E5%90%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用for输出正三角与倒三角的不同</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/27/C-%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BC%E4%B8%8E%E5%8F%B3%E5%80%BC/">C 中的左值与右值</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数组循环右移带来的思维转变"><span class="toc-number">1.</span> <span class="toc-text">数组循环右移带来的思维转变</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">1.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例"><span class="toc-number">1.2.</span> <span class="toc-text">例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入"><span class="toc-number">1.2.1.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出"><span class="toc-number">1.2.2.</span> <span class="toc-text">输出</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-25T07:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧//" class="article-tag-list-link color3">技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/23/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-22T22:13:57.960Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/23/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
   
 
 
@@ -384,8 +404,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -189,40 +189,45 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数组的循环右移" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
+      <a class="article-title" href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/">数组的循环右移</a>
     </h1>
   
 
         
-        <a href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-25T07:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
+        <a href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/" class="archive-article-date">
+  	<time datetime="2020-03-19T09:17:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="我的博客文章编写"><a href="#我的博客文章编写" class="headerlink" title="我的博客文章编写"></a>我的博客文章编写</h1>
-        
-          <a class="article-more-a" href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#more">more >></a>
-        
+        <h1 id="数组循环右移带来的思维转变"><a href="#数组循环右移带来的思维转变" class="headerlink" title="数组循环右移带来的思维转变"></a>数组循环右移带来的思维转变</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A<br>​0<br>​​ A<br>​1<br>​​ ⋯A<br>​N−1<br>​​ ）变换为（A<br>​N−M<br>​​ ⋯A<br>​N−1<br>​​ A<br>​0<br>​​ A<br>​1<br>​​ ⋯A<br>​N−M−1<br>​​ ）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+</blockquote>
+<h2 id="例"><a href="#例" class="headerlink" title="例"></a>例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>&gt;<br>6 2<br/><br>1 2 3 4 5 6</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>&gt;<br>5 6 1 2 3 4</p>
+<hr>
+<p>正常人的思维是，创一个能装<code>N</code>个数的数组，再循环移动<code>M</code>次。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;num);</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[n];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++M</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;<span class="built_in">array</span>[i]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)</span><br><span class="line">&#123;</span><br><span class="line">    a=<span class="built_in">array</span>[n<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)</span><br><span class="line">        <span class="built_in">array</span>[j+<span class="number">1</span>]=<span class="built_in">array</span>[j];</span><br><span class="line">    <span class="built_in">array</span>[<span class="number">0</span>]=a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,<span class="built_in">array</span>[i]);</span><br><span class="line">    <span class="keyword">if</span>(i==n<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这样如果输入的数很大，会非常麻烦。</p>
+<p>那怎么去减少循环呢？</p>
+<ol>
+<li>数组的输入与输出肯定是要循环的，那只能去除，或者合并掉中间的那层循环。</li>
+<li>不要中间的循环怎么写？</li>
+</ol>
+<p>我们可以在创建输入之前就定好位置，循环<code>M</code>次，第一个位置就向右移了<code>M</code>位，那么我们可以先找到移动后原来第一位应该在哪里，然后再依次输入就可以了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line"><span class="keyword">int</span> temp[n];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    m=m%n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;temp[m]);</span><br><span class="line">    m++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> count=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,temp[i]);</span><br><span class="line">    <span class="keyword">if</span>(count&lt;n)</span><br><span class="line">    &#123; </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">        count++;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><code>m%=n</code>这一步很重要，开始与前面空出的位置输入都是靠它。</p>
+
       
 
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -230,28 +235,17 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技巧//" class="article-tag-list-link color3">技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/">展开全文 >></a>
         </p>
       
 
@@ -1276,6 +1270,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>
