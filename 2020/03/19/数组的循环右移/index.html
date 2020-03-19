@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数组的循环右移 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数组循环右移带来的思维转变题目 一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​ A​1​​ ⋯A​N−1​​ ）变换为（A​N−M​​ ⋯A​N−1​​ A​0​​ A​1​​ ⋯A​N−M−1​​ ）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？  例输">
+  <meta name="description" content="数组循环右移带来的思维转变">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组的循环右移">
 <meta property="og:url" content="http://yoursite.com/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="数组循环右移带来的思维转变题目 一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0​​ A​1​​ ⋯A​N−1​​ ）变换为（A​N−M​​ ⋯A​N−1​​ A​0​​ A​1​​ ⋯A​N−M−1​​ ）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？  例输">
+<meta property="og:description" content="数组循环右移带来的思维转变">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-19T09:17:20.000Z">
-<meta property="article:modified_time" content="2020-03-19T09:42:23.536Z">
+<meta property="article:modified_time" content="2020-03-19T09:49:29.765Z">
 <meta property="article:author" content="CPPigSnail">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -213,11 +213,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="数组循环右移带来的思维转变"><a href="#数组循环右移带来的思维转变" class="headerlink" title="数组循环右移带来的思维转变"></a>数组循环右移带来的思维转变</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
-<p>一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A<br>​0<br>​​ A<br>​1<br>​​ ⋯A<br>​N−1<br>​​ ）变换为（A<br>​N−M<br>​​ ⋯A<br>​N−1<br>​​ A<br>​0<br>​​ A<br>​1<br>​​ ⋯A<br>​N−M−1<br>​​ ）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+        <h1 id="数组循环右移带来的思维转变"><a href="#数组循环右移带来的思维转变" class="headerlink" title="数组循环右移带来的思维转变"></a>数组循环右移带来的思维转变</h1><a id="more"></a>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p>一个数组A中存有N（&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（≥0）个位置，即将A中的数据由（A​0 A1⋯AN−1）变换为（AN−M⋯AN−1 A​0 A1⋯A​N−M−1）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
 </blockquote>
-<h2 id="例"><a href="#例" class="headerlink" title="例"></a>例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>&gt;<br>6 2<br/><br>1 2 3 4 5 6</p>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>&gt;<br>5 6 1 2 3 4</p>
+<h2 id="例"><a href="#例" class="headerlink" title="例"></a>例</h2><h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><blockquote>
+<p>6 2<br>1 2 3 4 5 6</p>
+</blockquote>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><blockquote>
+<p>5 6 1 2 3 4</p>
+</blockquote>
 <hr>
 <p>正常人的思维是，创一个能装<code>N</code>个数的数组，再循环移动<code>M</code>次。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;num);</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[n];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++M</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;<span class="built_in">array</span>[i]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;num;i++)</span><br><span class="line">&#123;</span><br><span class="line">    a=<span class="built_in">array</span>[n<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)</span><br><span class="line">        <span class="built_in">array</span>[j+<span class="number">1</span>]=<span class="built_in">array</span>[j];</span><br><span class="line">    <span class="built_in">array</span>[<span class="number">0</span>]=a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,<span class="built_in">array</span>[i]);</span><br><span class="line">    <span class="keyword">if</span>(i==n<span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这样如果输入的数很大，会非常麻烦。</p>
 <p>那怎么去减少循环呢？</p>
