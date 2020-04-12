@@ -6,19 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | Hexo</title>
+  <title>C中的赋值 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="什么是赋值在c语言中它是一个表达式语句，将值储存到内存位置上。等号左边的我们叫左值，右边的叫右值，左右两值类型要相同。（关于这两个值可以去看我的左值和右值的文章） 最简单的赋值1234int x;int y&#x3D;4;x&#x3D;3;&#x2F;&#x2F;将3的值赋给xx&#x3D;y;&#x2F;&#x2F;将y中的值4赋给x，x值就是4了 赋值表结合性是从右到左1a&#x3D;x&#x3D;y+3; 这条语句等于下面的1234a&#x3D;(x&#x3D;y+3);&#x2F;&#x2F;即x&#x3D;y+3;a&#x3D;x;当">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/02/23/hello-world/index.html">
+<meta property="og:title" content="C中的赋值">
+<meta property="og:url" content="http://yoursite.com/2020/04/12/C%E4%B8%AD%E7%9A%84%E8%B5%8B%E5%80%BC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="什么是赋值在c语言中它是一个表达式语句，将值储存到内存位置上。等号左边的我们叫左值，右边的叫右值，左右两值类型要相同。（关于这两个值可以去看我的左值和右值的文章） 最简单的赋值1234int x;int y&#x3D;4;x&#x3D;3;&#x2F;&#x2F;将3的值赋给xx&#x3D;y;&#x2F;&#x2F;将y中的值4赋给x，x值就是4了 赋值表结合性是从右到左1a&#x3D;x&#x3D;y+3; 这条语句等于下面的1234a&#x3D;(x&#x3D;y+3);&#x2F;&#x2F;即x&#x3D;y+3;a&#x3D;x;当">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-22T22:13:57.960Z">
-<meta property="article:modified_time" content="2020-02-26T23:54:54.715Z">
+<meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E6%8C%87%E9%92%88%E8%B5%8B%E5%80%BC.png?raw=true">
+<meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/tepedef.png?raw=true">
+<meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E4%BA%8C%E9%87%8D%E6%8C%87%E9%92%88.png?raw=true">
+<meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82%E8%B5%8B%E5%80%BC.png?raw=true">
+<meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82%E8%B5%8B%E5%80%BC%E6%9C%89typedef.png?raw=true">
+<meta property="article:published_time" content="2020-04-12T04:32:13.000Z">
+<meta property="article:modified_time" content="2020-04-12T09:54:10.959Z">
 <meta property="article:author" content="CPPigSnail">
+<meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E6%8C%87%E9%92%88%E8%B5%8B%E5%80%BC.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -192,35 +199,80 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-C中的赋值" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      C中的赋值
     </h1>
   
 
         
-        <a href="/2020/02/23/hello-world/" class="archive-article-date">
-  	<time datetime="2020-02-22T22:13:57.960Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
+        <a href="/2020/04/12/C%E4%B8%AD%E7%9A%84%E8%B5%8B%E5%80%BC/" class="archive-article-date">
+  	<time datetime="2020-04-12T04:32:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="什么是赋值"><a href="#什么是赋值" class="headerlink" title="什么是赋值"></a>什么是赋值</h1><p>在c语言中它是一个表达式语句，将值储存到内存位置上。等号左边的我们叫<strong>左值</strong>，右边的叫<strong>右值</strong>，左右两值类型要相同。（关于这两个值可以去看我的左值和右值的文章）</p>
+<h2 id="最简单的赋值"><a href="#最简单的赋值" class="headerlink" title="最简单的赋值"></a>最简单的赋值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">int</span> y=<span class="number">4</span>;</span><br><span class="line">x=<span class="number">3</span>;<span class="comment">//将3的值赋给x</span></span><br><span class="line">x=y;<span class="comment">//将y中的值4赋给x，x值就是4了</span></span><br></pre></td></tr></table></figure>
+<h2 id="赋值表结合性是从右到左"><a href="#赋值表结合性是从右到左" class="headerlink" title="赋值表结合性是从右到左"></a>赋值表结合性是从右到左</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=x=y+<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<p>这条语句等于下面的<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=(x=y+<span class="number">3</span>);</span><br><span class="line"><span class="comment">//即</span></span><br><span class="line">x=y+<span class="number">3</span>;</span><br><span class="line">a=x;</span><br></pre></td></tr></table></figure><br>当然我们根本没有必要写成<code>(a=x=y+3)</code>的这种形式因为程序是给人看的，后来的维护更重于创造，所以在不影响效率的前提下尽可能的写一些别人认识的程序。</p>
+<h2 id="复合赋值"><a href="#复合赋值" class="headerlink" title="复合赋值"></a>复合赋值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a+&#x3D;3;&#x2F;&#x2F;等价a&#x3D;a+3</span><br><span class="line">a*&#x3D;3;&#x2F;&#x2F;等价a&#x3D;a*3</span><br></pre></td></tr></table></figure>
+<p>这种运算看似有点麻烦，习惯之后你会很容易看懂。上面两行分别读作“把3加到a”，“把3乘到a”。<br>有人要问，不是说让人看懂最重要吗？为什么搞这个。</p>
+<p>因为这样做计算机只对a求了一次，尽管在现在这点效率微不足道，但是在40多年前这个还是很重要的，更何况这种写法也使程序看起来更简洁，编译器也可以生成更紧凑的代码。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="number">2</span>*(y<span class="number">-6</span>*f(x))]=a[<span class="number">2</span>*(y<span class="number">-6</span>*f(x))]+<span class="number">1</span>;</span><br><span class="line">a[<span class="number">2</span>*(y<span class="number">-6</span>*f(x))]+=<span class="number">1</span>;</span><br></pre></td></tr></table></figure><br>上面两句是等同的。</p>
+<hr>
+<p>当然这里的赋值都是很简单的，下面我们来跳跃一下，说一下指针的赋值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *a;</span><br></pre></td></tr></table></figure>
+<p>这表示a是一个指向<code>int</code>类型的指针。因为指针是一个变量，所以它的值可以被改变，可以做左值，可以用赋值表达式。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *a=&amp;b;</span><br></pre></td></tr></table></figure><br>因为a是int *类型，它的里面保存一个地址，所以我们可以将地址赋给它。而它本身是指针类型，所以&amp;b也是一种特殊的指针类型。</p>
+<p>将b的地址赋给a指针，我们更喜欢说“把a指向b的地址”，指针a的值就是b在内存中的地址，而间接操作*a也就是b的值。</p>
+<hr>
+<h2 id="关键字const"><a href="#关键字const" class="headerlink" title="关键字const"></a>关键字const</h2><blockquote>
+<p>const并不能把变量变成常量！在一个符号前加个const限定符只是表示这个符号不能被赋值。也就是它的值对于这个符号来说是只读的。</p>
+</blockquote>
+<p>在有指针的表达式中的const，我们只需看const是修饰谁的了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *<span class="keyword">const</span> a;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *a;</span><br><span class="line"><span class="keyword">char</span> <span class="keyword">const</span> *a;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>第一个，const在a前在*后，const的是这个指针a。表示的是这个指针的的值不能被修改，也就是它不可以指向别的地方。</li>
+<li>第二个，const在<code>*a</code>前，const是这个<code>*a</code>，也就是指针指向的这个值，也就是指针所指向的值不可以被修改。</li>
+<li>第三个与第二个一样。</li>
+</ol>
+<p>有人要问了有typedef怎么办。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* chars;</span><br><span class="line"><span class="keyword">const</span> chars a;</span><br></pre></td></tr></table></figure><br>这里是什么不能被改呢？<br><code>const chars a=char *const a;</code><br>因为chars被看成是一个新类型，是一个整体。所以a不可被修改。</p>
+<h2 id="ANSI-C"><a href="#ANSI-C" class="headerlink" title="ANSI C"></a>ANSI C</h2><p>关于指针的赋值<code>ANSI C</code>标准第6.3.16.1节中有下列约束条件</p>
+<blockquote>
+<p>两个操作数都是指向有限定符或无限定符的<strong>相容</strong>类型的指针，左边指针所指向的类型必须具有右边指针所指向类型的全部限定符。</p>
+</blockquote>
+<p>下面我们举例作分析<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> *a;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *aa;</span><br><span class="line">aa=a;</span><br></pre></td></tr></table></figure></p>
+<p>最后一条语句正确吗？</p>
+<ol>
+<li>左操作数是一个指向有const 限定符的char类型的指针。</li>
+<li>右操作数是一个指向没有限定符的char类型的指针。<br>两个都是char类型指针，相容，左操作有限定符const，右操作无限定符。所以，左操作所指向的类型具有右操作的所指向类型的全部限定符。故可以赋值。</li>
+</ol>
+<p>而反过来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a&#x3D;&#x3D;aa;</span><br></pre></td></tr></table></figure><br>同样两者类型相同，但是左操作无限定符，右操作有，不满足条件——<strong>左边指针所指向的类型必须具有右边指针所指向类型的全部限定符</strong>。所以不可以赋值。<br><img src="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E6%8C%87%E9%92%88%E8%B5%8B%E5%80%BC.png?raw=true" alt=""></p>
+<p>我们也可以做const的性质上来看这个问题，如果a=aa成立，因为a是一个指针，它就可以去改变aa中的值，显然这时const就没了用处，所以不行。</p>
+<p>如果想让上面的a=aa;与aa=a都成立。显然声明都有const与都没有const都是可行的方案。因为这样它们的类型相同而左右操作的限定符都没有，自然左操作的限定符有右操作的限定符了。</p>
+<p>我们再用tepedef创建一个类型看看<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> * chars;</span><br><span class="line">chars a;</span><br><span class="line"><span class="keyword">const</span> chars aa;</span><br><span class="line">a = aa;</span><br><span class="line">aa = a;</span><br></pre></td></tr></table></figure><br>因为typedef创建了一个chars，它就像一个新类型，所以这里的aa不可以被修改。不可做左值。<br><img src="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/tepedef.png?raw=true" alt=""></p>
+<hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> **a;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> **aa;</span><br><span class="line">a=aa;</span><br><span class="line">aa=a;</span><br></pre></td></tr></table></figure>
+<p>那么这个问题又是如何呢？</p>
+<ol>
+<li>char **a 表示a是指向char类型的指针的指针</li>
+<li>const char **aa,表示aa是指向有const限定符的char类型的指针的指针</li>
+</ol>
+<p>所以它们所指向的类型就不同了，前者指向char<em>，后者是const char</em>，因此，它们是不相容的，两个即然是不相容的，那么它们也就不能赋值，所以后两句都是错的。<br><img src="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E4%BA%8C%E9%87%8D%E6%8C%87%E9%92%88.png?raw=true" alt=""></p>
+<hr>
+<h2 id="形参与实参的传递"><a href="#形参与实参的传递" class="headerlink" title="形参与实参的传递"></a>形参与实参的传递</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo(<span class="keyword">const</span> <span class="keyword">char</span> **p)&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    foo(argv);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可能认为这个是可行的，但是编译器会发出警告。<br>warning: argument is incompatible with prototype<br>（参数与原型不匹配）<br>为什么呢？<br> ANSI C标准第6.3.2.2节中有过这么一句话：</p>
+<blockquote>
+<p>每个实参都应该具有自己的类型，这样它的值就可以赋给与它所对应的形参类型的对象（该对象的类型不能含有限定符）</p>
+</blockquote>
+<p> 也就是说，形参与实参传递类似的是赋值，是实参赋给形参，<code>形参=实参</code>那么这里的代码<br> 可以看作<br> <code>const char **p=char **argv;</code></p>
+<p> 显然我们刚才说到，前者指向的类型是<code>const char*</code>后者是<code>char*</code>，不满足<strong>两个操作数都是指向有限定符或无限定符的相容类型的指针</strong>这个条件。<br> <img src="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82%E8%B5%8B%E5%80%BC.png?raw=true" alt=""></p>
+<p>我们可以用typedef来解决这个问题<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> * chars;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(<span class="keyword">const</span> chars*p)</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, chars *argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	foo(argv);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br> <code>const chars *p=chars *argv;</code><br>两者都是指向chars类型的指针，，左边有const，右边无限定符。满足<strong>两个操作数都是指向有限定符或无限定符的相容类型的指针，左边指针所指向的类型必须具有右边指针所指向类型的全部限定符</strong>的条件。<br><img src="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82%E8%B5%8B%E5%80%BC%E6%9C%89typedef.png?raw=true" alt=""><br>所以，有很多<code>*</code>号时，尽量多用typedef新定一个类型。只保留一个<code>*</code>即可。</p>
 
       
 
@@ -250,6 +302,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -300,7 +363,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://little-zhengjj.github.io//02/23/hello-world/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://little-zhengjj.github.io//04/12/C%E4%B8%AD%E7%9A%84%E8%B5%8B%E5%80%BC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,15 +377,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/25/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          我的第一篇博客文章
-        
-      </div>
-    </a>
   
+    <a href="/2020/04/04/KMPP%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">KMPP算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -347,7 +406,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是赋值"><span class="toc-number">1.</span> <span class="toc-text">什么是赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#最简单的赋值"><span class="toc-number">1.1.</span> <span class="toc-text">最简单的赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#赋值表结合性是从右到左"><span class="toc-number">1.2.</span> <span class="toc-text">赋值表结合性是从右到左</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复合赋值"><span class="toc-number">1.3.</span> <span class="toc-text">复合赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键字const"><span class="toc-number">1.4.</span> <span class="toc-text">关键字const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ANSI-C"><span class="toc-number">1.5.</span> <span class="toc-text">ANSI C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#形参与实参的传递"><span class="toc-number">1.6.</span> <span class="toc-text">形参与实参的传递</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
