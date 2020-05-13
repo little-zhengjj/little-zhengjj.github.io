@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>C中的赋值 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是赋值在c语言中它是一个表达式语句，将值储存到内存位置上。等号左边的我们叫左值，右边的叫右值，左右两值类型要相同。（关于这两个值可以去看我的左值和右值的文章） 最简单的赋值1234int x;int y&#x3D;4;x&#x3D;3;&#x2F;&#x2F;将3的值赋给xx&#x3D;y;&#x2F;&#x2F;将y中的值4赋给x，x值就是4了 赋值表结合性是从右到左1a&#x3D;x&#x3D;y+3; 这条语句等于下面的1234a&#x3D;(x&#x3D;y+3);&#x2F;&#x2F;即x&#x3D;y+3;a&#x3D;x;当">
+  <meta name="description" content="什么是赋值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C中的赋值">
 <meta property="og:url" content="http://yoursite.com/2020/04/12/C%E4%B8%AD%E7%9A%84%E8%B5%8B%E5%80%BC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么是赋值在c语言中它是一个表达式语句，将值储存到内存位置上。等号左边的我们叫左值，右边的叫右值，左右两值类型要相同。（关于这两个值可以去看我的左值和右值的文章） 最简单的赋值1234int x;int y&#x3D;4;x&#x3D;3;&#x2F;&#x2F;将3的值赋给xx&#x3D;y;&#x2F;&#x2F;将y中的值4赋给x，x值就是4了 赋值表结合性是从右到左1a&#x3D;x&#x3D;y+3; 这条语句等于下面的1234a&#x3D;(x&#x3D;y+3);&#x2F;&#x2F;即x&#x3D;y+3;a&#x3D;x;当">
+<meta property="og:description" content="什么是赋值">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E6%8C%87%E9%92%88%E8%B5%8B%E5%80%BC.png?raw=true">
 <meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/tepedef.png?raw=true">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82%E8%B5%8B%E5%80%BC.png?raw=true">
 <meta property="og:image" content="https://github.com/little-zhengjj/markdownphotos/blob/master/markdown/%E5%BD%A2%E5%8F%82%E4%B8%8E%E5%AE%9E%E5%8F%82%E8%B5%8B%E5%80%BC%E6%9C%89typedef.png?raw=true">
 <meta property="article:published_time" content="2020-04-12T04:32:13.000Z">
-<meta property="article:modified_time" content="2020-04-12T09:54:10.959Z">
+<meta property="article:modified_time" content="2020-05-13T02:05:05.884Z">
 <meta property="article:author" content="CPPigSnail">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="什么是赋值"><a href="#什么是赋值" class="headerlink" title="什么是赋值"></a>什么是赋值</h1><p>在c语言中它是一个表达式语句，将值储存到内存位置上。等号左边的我们叫<strong>左值</strong>，右边的叫<strong>右值</strong>，左右两值类型要相同。（关于这两个值可以去看我的左值和右值的文章）</p>
+        <h1 id="什么是赋值"><a href="#什么是赋值" class="headerlink" title="什么是赋值"></a>什么是赋值</h1><a id="more"></a>
+<p>在c语言中它是一个表达式语句，将值储存到内存位置上。等号左边的我们叫<strong>左值</strong>，右边的叫<strong>右值</strong>，左右两值类型要相同。（关于这两个值可以去看我的左值和右值的文章）</p>
 <h2 id="最简单的赋值"><a href="#最简单的赋值" class="headerlink" title="最简单的赋值"></a>最简单的赋值</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="keyword">int</span> y=<span class="number">4</span>;</span><br><span class="line">x=<span class="number">3</span>;<span class="comment">//将3的值赋给x</span></span><br><span class="line">x=y;<span class="comment">//将y中的值4赋给x，x值就是4了</span></span><br></pre></td></tr></table></figure>
 <h2 id="赋值表结合性是从右到左"><a href="#赋值表结合性是从右到左" class="headerlink" title="赋值表结合性是从右到左"></a>赋值表结合性是从右到左</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=x=y+<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
 <p>这条语句等于下面的<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=(x=y+<span class="number">3</span>);</span><br><span class="line"><span class="comment">//即</span></span><br><span class="line">x=y+<span class="number">3</span>;</span><br><span class="line">a=x;</span><br></pre></td></tr></table></figure><br>当然我们根本没有必要写成<code>(a=x=y+3)</code>的这种形式因为程序是给人看的，后来的维护更重于创造，所以在不影响效率的前提下尽可能的写一些别人认识的程序。</p>
@@ -393,8 +394,8 @@
     </a>
   
   
-    <a href="/2020/04/04/KMPP%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">KMPP算法</div>
+    <a href="/2020/04/04/KMP%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">KMP算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -561,19 +562,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数构结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数构结构</a>
               </li>
             
             <div class="clearfix"></div>
@@ -729,6 +730,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>
