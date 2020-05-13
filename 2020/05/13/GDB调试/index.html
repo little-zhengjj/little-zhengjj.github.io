@@ -16,7 +16,7 @@
 <meta property="og:description" content="来自《Debug Hacks》中文版——电子工业出版社">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-13T01:55:04.000Z">
-<meta property="article:modified_time" content="2020-05-13T12:57:35.969Z">
+<meta property="article:modified_time" content="2020-05-13T13:04:57.447Z">
 <meta property="article:author" content="CPPigSnail">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -270,7 +270,7 @@
 <p>(gdb) b main<br>Breakpoint 1 at 0x530: file /usr/include/x86_64-linux-gnu/bits/stdio2.h, line 104.</p>
 </blockquote>
 <p>设置断点有很多种方法，可以参见下表。</p>
-<p>格式：<br>|break(b)|参数|<br>|-|-|<br>|b|行号|<br>|b|文件名：行号|<br>|b|文件名：函数名|<br>|b|+偏移量|<br>|b|—偏移量|<br>|b|*地址|</p>
+<p>格式：<br>|b|参数|<br>|-|-|<br>|b|行号|<br>|b|文件名:行号|<br>|b|文件名:函数名|<br>|b|+偏移量|<br>|b|—偏移量|<br>|b|*地址|</p>
 <p>如果不指定，那么就默认在下一行代码上设置断点。</p>
 <h2 id="确认断点"><a href="#确认断点" class="headerlink" title="确认断点"></a>确认断点</h2><blockquote>
 <p>(gdb) info b<br>Num     Type           Disp Enb Address            What<br>1       breakpoint     keep y   0x0000000000000530 in main<br>                                                   at /usr/include/x86_64-linux-gnu/bits/stdio2.h:104</p>
@@ -395,7 +395,7 @@
 <p>下面是显示从pc所指地址开始的10条汇编指令(i)</p>
 <blockquote>
 <p>(gdb) x/10i $pc</p>
-<p>=&gt; 0x555555554649 <main+15>:    callq  0x555555554655 <output><br>   0x55555555464e <main+20>:    mov    $0x0,%eax<br>   0x555555554653 <main+25>:    leaveq<br>   0x555555554654 <main+26>:    retq<br>   0x555555554655 <output>:    push   %rbp<br>   0x555555554656 <output+1>:    mov    %rsp,%rbp<br>   0x555555554659 <output+4>:<br>    lea    0x94(%rip),%rdi        # 0x5555555546f4<br>   0x555555554660 <output+11>:    callq  0x555555554510 <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#x70;&#117;&#116;&#x73;&#x40;&#x70;&#108;&#x74;">&#x70;&#117;&#116;&#x73;&#x40;&#x70;&#108;&#x74;</a><br>   0x555555554665 <output+16>:    nop<br>   0x555555554666 <output+17>:    pop    %rbp</p>
+<p>=&gt; 0x555555554649 <main+15>:    callq  0x555555554655 <output><br>   0x55555555464e <main+20>:    mov    $0x0,%eax<br>   0x555555554653 <main+25>:    leaveq<br>   0x555555554654 <main+26>:    retq<br>   0x555555554655 <output>:    push   %rbp<br>   0x555555554656 <output+1>:    mov    %rsp,%rbp<br>   0x555555554659 <output+4>:<br>    lea    0x94(%rip),%rdi        # 0x5555555546f4<br>   0x555555554660 <output+11>:    callq  0x555555554510 <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#112;&#x75;&#116;&#x73;&#x40;&#112;&#x6c;&#116;">&#112;&#x75;&#116;&#x73;&#x40;&#112;&#x6c;&#116;</a><br>   0x555555554665 <output+16>:    nop<br>   0x555555554666 <output+17>:    pop    %rbp</p>
 </blockquote>
 <h4 id="也有反汇编命令"><a href="#也有反汇编命令" class="headerlink" title="也有反汇编命令"></a>也有反汇编命令</h4><p>1.disassemble</p>
 <ol>
@@ -737,15 +737,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数构结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数构结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -909,6 +909,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
