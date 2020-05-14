@@ -215,199 +215,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1><h2 id="条件断点"><a href="#条件断点" class="headerlink" title="条件断点"></a>条件断点</h2><blockquote>
-<p>(gdb) break 断点 if 条件</p>
-</blockquote>
-<p>如果条件是真则停止运行。</p>
-<blockquote>
-<p>(gdb) break 6 if i=1<br>Breakpoint 1 at 0x649: file main.c, line 6.<br>(gdb) run<br>Starting program: /home/zs/GDB/3/a.out </p>
-</blockquote>
-<p>Breakpoint 1, main () at main.c:6<br>6        for(;i&lt;3;i++)<br>(gdb) p i<br>$1 = 1<br>(gdb) info b<br>Num     Type           Disp Enb Address            What<br>1       breakpoint     keep y   0x0000555555554649 in main at main.c:6<br>    stop only if i=1<br>    breakpoint already hit 1 time</p>
-<pre><code>stop only if i=1
-</code></pre><h4 id="给断点添加或删除触发条件"><a href="#给断点添加或删除触发条件" class="headerlink" title="给断点添加或删除触发条件"></a>给断点添加或删除触发条件</h4><p>删除</p>
-<blockquote>
-<p>(gdb) condition 断点编号<br>Num     Type           Disp Enb Address            What<br>1       breakpoint     keep y   0x0000555555554649 in main at main.c:6<br>    stop only if i=1<br>    breakpoint already hit 1 time<br>(gdb) condition 6<br>No breakpoint number 6.<br>(gdb) condition 1<br>Breakpoint 1 now unconditional.<br>(gdb) </p>
-</blockquote>
-<p>添加</p>
-<blockquote>
-<p>condition 断点编号 条件</p>
-</blockquote>
-<h2 id="反复执行"><a href="#反复执行" class="headerlink" title="反复执行"></a>反复执行</h2><blockquote>
-<p>(gdb) ignore 断点编号 次数</p>
-</blockquote>
-<p>与continue一样忽略指定次数的断点</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>格式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>continue 次数</td>
-<td></td>
-</tr>
-<tr>
-<td>step 次数</td>
-<td></td>
-</tr>
-<tr>
-<td>stepi次数</td>
-<td></td>
-</tr>
-<tr>
-<td>next 次数</td>
-<td></td>
-</tr>
-<tr>
-<td>nexti 次数</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>都是给命令加相应的次数。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>格式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>finish</td>
-<td>执行完当前函数后暂停</td>
-</tr>
-<tr>
-<td>until</td>
-<td>执行完函数或代码块暂停，如是循环，则在循环完暂停</td>
-</tr>
-<tr>
-<td>until 地址</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="删除断点与禁用断点"><a href="#删除断点与禁用断点" class="headerlink" title="删除断点与禁用断点"></a>删除断点与禁用断点</h2><p>用clear删除已定义的断点</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>格式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>clear</td>
-<td></td>
-</tr>
-<tr>
-<td>clear函数名</td>
-<td></td>
-</tr>
-<tr>
-<td>clear行号</td>
-<td></td>
-</tr>
-<tr>
-<td>clear文件名:行号</td>
-<td></td>
-</tr>
-<tr>
-<td>clear文件名:函数名</td>
-<td></td>
-</tr>
-<tr>
-<td>delete [breakpoints] 断点编号</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>disable临时禁用断点</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>格式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>disable [breakpoints]</td>
-<td>禁用所有</td>
-</tr>
-<tr>
-<td>disable [breakpoints] 断点编号</td>
-<td></td>
-</tr>
-<tr>
-<td>disable display 显示编号</td>
-<td>禁用display命令定义的自动显示</td>
-</tr>
-<tr>
-<td>disable mem 内存区域</td>
-<td>禁用mem定义的内存区域</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>enable启用已禁用的断点</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>格式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>enable [breakpoints]</td>
-<td></td>
-</tr>
-<tr>
-<td>enable [breakpoints] 断点编号</td>
-<td></td>
-</tr>
-<tr>
-<td>enable [breakpoints] once 断点编号</td>
-<td>只启用一次</td>
-</tr>
-<tr>
-<td>enable [breakpoints] delete 断点编号</td>
-<td></td>
-</tr>
-<tr>
-<td>enable display 显示编号</td>
-<td></td>
-</tr>
-<tr>
-<td>enable mem 内存区域</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="断点命令"><a href="#断点命令" class="headerlink" title="断点命令"></a>断点命令</h1><blockquote>
-<p>(gdb) commands 断点编号<br>    命令<br>    …<br>    end<br>(gdb) l<br>1    #include<stdio.h><br>2    void max(int a,int b);<br>3<br>4    int main(void)<br>5    {<br>6        int i=0;<br>7        for(;i<10;i++)
-8        {
-9            printf("Hello world!\n");
-10        }
-(gdb) l
-11        int a=2;
-12        int b=3;
-13        return 0;
-14    }
-15    void max(int a,int b)
-16    {
-17        printf("The max is%d\n",a>b?a:b);<br>18        return;<br>19    }<br>(gdb) l<br>Line number 20 out of range; main.c has 19 lines.<br>(gdb) break 7<br>Breakpoint 2 at 0x555555554699: file main.c, line 7.<br>(gdb) info b<br>Num     Type           Disp Enb Address            What<br>2       breakpoint     keep y   0x0000555555554699 in main at main.c:7<br>(gdb) conmmands 2<br>Undefined command: “conmmands”.  Try “help”.<br>(gdb) commands 2<br>Type commands for breakpoint(s) 2, one per line.<br>End with a line saying just “end”.<br>p i<br>end<br>(gdb) run<br>The program being debugged has been started already.<br>Start it from the beginning? (y or n) y<br>Starting program: /home/zs/GDB/3/a.out<br>Breakpoint 2, main () at main.c:7<br>7        for(;i&lt;10;i++)<br>$1 = 0</p>
-</blockquote>
-<p>程序在断点处停止后，自动执行命令</p>
-
+        <h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1>
+        
+          <a class="article-more-a" href="/2020/05/14/GDB%E8%B0%83%E8%AF%952/#more">more >></a>
+        
       
 
       
@@ -1269,11 +1080,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1437,6 +1248,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
