@@ -291,75 +291,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h1 id="值的历史"><a href="#值的历史" class="headerlink" title="值的历史"></a>值的历史</h1><p>通过print命令显示过的值会记录在内部的值历史中，这些值可以在其它表代式中使用。</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$</td>
-<td>值历史的最后一个值</td>
-</tr>
-<tr>
-<td>$n</td>
-<td>值历史的第n个值</td>
-</tr>
-<tr>
-<td>$$</td>
-<td>值历史的倒数第2个值</td>
-</tr>
-<tr>
-<td>$$n</td>
-<td>值历史的倒数第n个值</td>
-</tr>
-<tr>
-<td>$_</td>
-<td>x命令显示过的最后的地址</td>
-</tr>
-<tr>
-<td>$__</td>
-<td>x命令显示过的最后的地址的值</td>
-</tr>
-<tr>
-<td>$_exitcode</td>
-<td>调试中的程序的返回代码</td>
-</tr>
-<tr>
-<td>$bpnum</td>
-<td>最后设置的断点编号</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>show value可以显示历史中的最后10个值。</p>
-<blockquote>
-<p>(gdb) show value<br>\$1 = 32767<br>\$2 = 0<br>\$3 = 0<br>\$4 = 0<br>\$5 = 0<br>\$6 = 1</p>
-</blockquote>
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>可以随意定义变量，以$开头，由英文字母和数字组成。</p>
-<blockquote>
-<p>(gdb) set $1=0<br>(gdb) p<br>\$1<br>\$1 = 0</p>
-</blockquote>
-<h1 id="命令定义"><a href="#命令定义" class="headerlink" title="命令定义"></a>命令定义</h1><p>利用define命令可以自定义命令，还可以使用document命令给自定义命令添加说明。用”help 命令名”可以查看定义的命令。</p>
-<p>格式:</p>
-<blockquote>
-<p>(gdb) define  命令名<br>    命令<br>    …<br>    end</p>
-</blockquote>
-<p>格式：</p>
-<blockquote>
-<p>(gdb) document 命令名<br>    说明<br>    …<br>    end</p>
-</blockquote>
-<p>格式：</p>
-<blockquote>
-<p>(gdb) help 命令名</p>
-</blockquote>
-<p>注意define定义的命令只在本次调试中有效。</p>
-
+        <h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1>
+        
+          <a class="article-more-a" href="/2020/05/15/GDB%E8%B0%83%E8%AF%953/#more">more >></a>
+        
       
 
       
@@ -1145,11 +1080,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
