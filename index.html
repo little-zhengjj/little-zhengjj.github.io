@@ -271,6 +271,223 @@
 
 
   
+    <article id="post-GDB调试3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/15/GDB%E8%B0%83%E8%AF%953/">GDB调试3</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/15/GDB%E8%B0%83%E8%AF%953/" class="archive-article-date">
+  	<time datetime="2020-05-15T01:16:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h1 id="值的历史"><a href="#值的历史" class="headerlink" title="值的历史"></a>值的历史</h1><p>通过print命令显示过的值会记录在内部的值历史中，这些值可以在其它表代式中使用。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>值历史的最后一个值</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>值历史的第n个值</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>值历史的倒数第2个值</td>
+</tr>
+<tr>
+<td>$$n</td>
+<td>值历史的倒数第n个值</td>
+</tr>
+<tr>
+<td>$_</td>
+<td>x命令显示过的最后的地址</td>
+</tr>
+<tr>
+<td>$__</td>
+<td>x命令显示过的最后的地址的值</td>
+</tr>
+<tr>
+<td>$_exitcode</td>
+<td>调试中的程序的返回代码</td>
+</tr>
+<tr>
+<td>$bpnum</td>
+<td>最后设置的断点编号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>show value可以显示历史中的最后10个值。</p>
+<blockquote>
+<p>(gdb) show value<br>\$1 = 32767<br>\$2 = 0<br>\$3 = 0<br>\$4 = 0<br>\$5 = 0<br>\$6 = 1</p>
+</blockquote>
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><p>可以随意定义变量，以$开头，由英文字母和数字组成。</p>
+<blockquote>
+<p>(gdb) set $1=0<br>(gdb) p<br>\$1<br>\$1 = 0</p>
+</blockquote>
+<h1 id="命令定义"><a href="#命令定义" class="headerlink" title="命令定义"></a>命令定义</h1><p>利用define命令可以自定义命令，还可以使用document命令给自定义命令添加说明。用”help 命令名”可以查看定义的命令。</p>
+<p>格式:</p>
+<blockquote>
+<p>(gdb) define  命令名<br>    命令<br>    …<br>    end</p>
+</blockquote>
+<p>格式：</p>
+<blockquote>
+<p>(gdb) document 命令名<br>    说明<br>    …<br>    end</p>
+</blockquote>
+<p>格式：</p>
+<blockquote>
+<p>(gdb) help 命令名</p>
+</blockquote>
+<p>注意define定义的命令只在本次调试中有效。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/15/GDB%E8%B0%83%E8%AF%953/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-GDB调试2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/GDB%E8%B0%83%E8%AF%952/">GDB调试2</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/GDB%E8%B0%83%E8%AF%952/" class="archive-article-date">
+  	<time datetime="2020-05-14T01:34:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h1>
+        
+          <a class="article-more-a" href="/2020/05/14/GDB%E8%B0%83%E8%AF%952/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/GDB%E8%B0%83%E8%AF%952/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-KMP算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -803,158 +1020,6 @@
 
 
   
-    <article id="post-栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/24/%E6%A0%88/">栈</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/24/%E6%A0%88/" class="archive-article-date">
-  	<time datetime="2020-03-24T02:53:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="栈ADT"><a href="#栈ADT" class="headerlink" title="栈ADT"></a>栈ADT</h1>
-        
-          <a class="article-more-a" href="/2020/03/24/%E6%A0%88/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数构结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/24/%E6%A0%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数组的循环右移" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/">数组的循环右移</a>
-    </h1>
-  
-
-        
-        <a href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/" class="archive-article-date">
-  	<time datetime="2020-03-19T09:17:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="数组循环右移带来的思维转变"><a href="#数组循环右移带来的思维转变" class="headerlink" title="数组循环右移带来的思维转变"></a>数组循环右移带来的思维转变</h1>
-        
-          <a class="article-more-a" href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C语言</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/19/%E6%95%B0%E7%BB%84%E7%9A%84%E5%BE%AA%E7%8E%AF%E5%8F%B3%E7%A7%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1248,6 +1313,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
