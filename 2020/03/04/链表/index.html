@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583292053894&amp;di=a6a10f15de1bf24affe2844eeaee6463&amp;imgtype=jpg&amp;src=http%253A%252F%252Fimg0.imgtn.bdimg.com%252Fit%252Fu%253D1282674340%252C2388810186%2526fm%253D214%2526gp%253D0.jpg">
 <meta property="article:published_time" content="2020-03-04T00:20:34.000Z">
-<meta property="article:modified_time" content="2020-03-14T13:59:23.782Z">
+<meta property="article:modified_time" content="2020-08-14T12:24:46.108Z">
 <meta property="article:author" content="CPPigSnail">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -222,10 +222,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="简单链表介绍"><a href="#简单链表介绍" class="headerlink" title="简单链表介绍"></a>简单链表介绍</h1><a id="more"></a>
-<h2 id="抽象数据类型-Abstract-Data-Type-ADT"><a href="#抽象数据类型-Abstract-Data-Type-ADT" class="headerlink" title="抽象数据类型(Abstract Data Type,ADT)"></a>抽象数据类型<code>(Abstract Data Type,ADT)</code></h2><p>ADT就是一个抽象的数据类型，类型包括两类信息：属性和操作。我们现在要定义一个新的类型，<br/></p>
+<h2 id="抽象数据类型-Abstract-Data-Type-ADT"><a href="#抽象数据类型-Abstract-Data-Type-ADT" class="headerlink" title="抽象数据类型(Abstract Data Type,ADT)"></a>抽象数据类型<code>(Abstract Data Type,ADT)</code></h2><p>ADT就是一个抽象的数据类型，类型包括两类信息：属性和操作。 现在要定义一个新的类型，<br/></p>
 <ol>
 <li>是要提供储存结构的方法。</li>
-<li>是要提供操作数据的法。<br/>简单来说，就是我们要自己去定义一个新的类型，而且要对这个类型写一些可以操作的函数。</li>
+<li>是要提供操作数据的法。<br/>简单来说，就是 要自己去定义一个新的类型，而且要对这个类型写一些可以操作的函数。</li>
 </ol>
 <h2 id="表ADT"><a href="#表ADT" class="headerlink" title="表ADT"></a>表ADT</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583292053894&amp;di=a6a10f15de1bf24affe2844eeaee6463&amp;imgtype=jpg&amp;src=http%3A%2F%2Fimg0.imgtn.bdimg.com%2Fit%2Fu%3D1282674340%2C2388810186%26fm%3D214%26gp%3D0.jpg" alt=""></p>
 <h3 id="整表创建"><a href="#整表创建" class="headerlink" title="整表创建"></a>整表创建</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">随机产生n个元素</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateListHead</span><span class="params">(LinkList *L,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LinkList p;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    srand(time(<span class="number">0</span>));</span><br><span class="line">    *L=(LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">    (*L)-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p=(ListList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node));</span><br><span class="line">        p-&gt;data=rand()%<span class="number">100</span>+<span class="number">1</span>;</span><br><span class="line">        p-&gt;next=(*L)-&gt;next;</span><br><span class="line">        (*L)-&gt;next=p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -515,15 +515,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数构结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,6 +683,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

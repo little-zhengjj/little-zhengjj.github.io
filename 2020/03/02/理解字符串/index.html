@@ -16,7 +16,7 @@
 <meta property="og:description" content="字符串的基本概念">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-02T03:39:46.000Z">
-<meta property="article:modified_time" content="2020-03-23T13:05:40.116Z">
+<meta property="article:modified_time" content="2020-08-14T12:24:46.817Z">
 <meta property="article:author" content="CPPigSnail">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
       
         <h1 id="字符串的基本概念"><a href="#字符串的基本概念" class="headerlink" title="字符串的基本概念"></a>字符串的基本概念</h1><a id="more"></a>
 <p><strong>字符串</strong>是以空字符(\0)结尾的<code>char</code>类型数组。</p>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>我们常用数组与指针进行初始化，自己决定它的长度。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> words[<span class="number">10</span>]=<span class="string">"I am a boy."</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *p=<span class="string">"I am a boy."</span>;</span><br></pre></td></tr></table></figure><br>也可以让编译器计算它的大小<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> words[]=<span class="string">"I am a boy"</span>;</span><br></pre></td></tr></table></figure><br>甚至可以这样<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> <span class="keyword">word</span>[<span class="number">10</span>]=&#123;<span class="string">'I'</span>,<span class="string">'a'</span>,<span class="string">'m'</span>,<span class="string">'\0'</span>&#125;;</span><br></pre></td></tr></table></figure><br>注意这个空字符(‘\0’),没有这个，那这个就不是一个字符串，而是一个字符数组了。</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p> 常用数组与指针进行初始化，自己决定它的长度。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> words[<span class="number">10</span>]=<span class="string">"I am a boy."</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *p=<span class="string">"I am a boy."</span>;</span><br></pre></td></tr></table></figure><br>也可以让编译器计算它的大小<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> words[]=<span class="string">"I am a boy"</span>;</span><br></pre></td></tr></table></figure><br>甚至可以这样<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> <span class="keyword">word</span>[<span class="number">10</span>]=&#123;<span class="string">'I'</span>,<span class="string">'a'</span>,<span class="string">'m'</span>,<span class="string">'\0'</span>&#125;;</span><br></pre></td></tr></table></figure><br>注意这个空字符(‘\0’),没有这个，那这个就不是一个字符串，而是一个字符数组了。</p>
 <h3 id="字符串字面量"><a href="#字符串字面量" class="headerlink" title="字符串字面量"></a>字符串字面量</h3><p>用<strong>双引号</strong>括起来的就是<strong>字符串字面量</strong>(string literal),也叫作<strong>字符串常量</strong>(string constant)。<br/>字符串常量属于<strong>静态存储类别</strong>。所以在程序的整个生命周期内都是存在的。</p>
 <p>注意：用<strong>单引号</strong>括起来的是字符，不是字符串。</p>
 <hr>
@@ -235,12 +235,13 @@
 <ol>
 <li>同样其也先在静态存储区中，而一旦开始执行程序，它会为指针变量留出一个存储位置，将字符串的地址存储在指针变量中。</li>
 <li>显然指针是一个<strong>变量</strong>，可以去修改它。</li>
-<li>这使得字符串没有副本，一旦去更改它，将会改变字符串的值。所以我们可以用<code>const</code>限定符。即<code>int * const p</code>,这表示不能修改指针本身，也就是它不能指向别处了。因为 <code>const</code>与<code>p</code>最近。而<code>int const *p</code>与<code>const int *p</code>表示不能去修改它所指向的值。</li>
+<li><p>这使得字符串没有副本，一旦去更改它，将会改变字符串的值。所以 可以用<code>const</code>限定符。即<code>int * const p</code>,这表示不能修改指针本身，也就是它不能指向别处了。因为 <code>const</code>与<code>p</code>最近。而<code>int const *p</code>与<code>const int *p</code>表示不能去修改它所指向的值。</p>
+<p>可以得出，数组名是一个<strong>常量</strong>，不能做左值，而指针是一个变量。</p>
+</li>
 </ol>
-<p>我们可以得出，数组名是一个<strong>常量</strong>，不能做左值，而指针是一个变量。</p>
 <hr>
 <p>所以下面的语句<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">words=<span class="string">"I am a boy"</span>;</span><br></pre></td></tr></table></figure><br>是非法的。</p>
-<p>如果我们要想让字符串数组与变量一样，可以进行赋值，我们要用到<code>strcpy</code>函数。</p>
+<p>如果 要想让字符串数组与变量一样，可以进行赋值， 要用到<code>strcpy</code>函数。</p>
 
       
 
@@ -523,15 +524,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数构结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,6 +692,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

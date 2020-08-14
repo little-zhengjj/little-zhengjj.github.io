@@ -16,7 +16,7 @@
 <meta property="og:description" content="如何分析(*(void(*)())0)()">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-28T03:11:55.000Z">
-<meta property="article:modified_time" content="2020-03-20T04:42:43.928Z">
+<meta property="article:modified_time" content="2020-08-14T12:24:47.604Z">
 <meta property="article:author" content="CPPigSnail">
 <meta property="article:tag" content="C语言">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
       
         <h1 id="如何分析-void-0"><a href="#如何分析-void-0" class="headerlink" title="如何分析(*(void(*)())0)()"></a>如何分析<code>(*(void(*)())0)()</code></h1><a id="more"></a>
 <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>任何C变量的声明都由两部分组成：<strong>类型</strong>以及一组类似表达式的<strong>声明符</strong>（declarator）。</p>
-<h3 id="声明符"><a href="#声明符" class="headerlink" title="声明符"></a>声明符</h3><p>它与表达式类似，对它求值应该返回一个声明中给定类型的结果。最简单的声明显然就是单个变量。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f,g;</span><br></pre></td></tr></table></figure><br>当对其求值时，表达式<code>f</code>和<code>g</code>的类型为浮点类型。<br>这里强调表达式，所以我们也可以这么写：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> ((f));</span><br></pre></td></tr></table></figure><br>即当对其求值时<code>((f))</code>的类型为浮点类型，由此可得<code>f</code>也是浮点类型。<br/>同理</p>
+<h3 id="声明符"><a href="#声明符" class="headerlink" title="声明符"></a>声明符</h3><p>它与表达式类似，对它求值应该返回一个声明中给定类型的结果。最简单的声明显然就是单个变量。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f,g;</span><br></pre></td></tr></table></figure><br>当对其求值时，表达式<code>f</code>和<code>g</code>的类型为浮点类型。<br>这里强调表达式，所以 也可以这么写：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> ((f));</span><br></pre></td></tr></table></figure><br>即当对其求值时<code>((f))</code>的类型为浮点类型，由此可得<code>f</code>也是浮点类型。<br/>同理</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">ff</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>表达式 <code>ff()</code>求值的结果是一个浮点类型，所有<code>ff()</code>是一个返回浮点类型的函数。<br/>还有<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> *pf;</span><br></pre></td></tr></table></figure><br><code>*pf</code>这个表达式是一个浮点数，那<code>pf</code>就是一个指向浮点数的指针。<br/>组合起来还会更有意思<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float *g(),(*h)();</span><br></pre></td></tr></table></figure><br><code>()</code>的优先级比<code>*</code>高。所以<code>g</code>是一个返回<code>float</code>类型指针的函数，<code>h</code>是一个指向函数的指针，所指函数返回值是浮点型。</p>
 <h3 id="类型转换符"><a href="#类型转换符" class="headerlink" title="类型转换符"></a>类型转换符</h3><p>只需要将声明中的<code>;</code>与变量名去掉,再加一个括号即可。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br></pre></td></tr></table></figure><br>类型转换符是<code>(int)</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> (*h)();</span><br></pre></td></tr></table></figure><br>类型转换符是<code>(float (*)())</code>，它就表示一个<strong>指向返回值为浮点型的函数的指针</strong>的类型转换符。</p>
@@ -230,19 +230,19 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(*fp)();</span><br></pre></td></tr></table></figure>
 <p>这与<code>(*(void(*)())0)()</code>很相近，可以将<code>(void(*)())0</code>看作<code>fp</code></p>
 </li>
-<li><p>我们现在怎么来理解<code>(void(*)())0</code></p>
+<li><p>现在怎么来理解<code>(void(*)())0</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*fp)();</span><br></pre></td></tr></table></figure>
 <p>这个声明表示<code>fp</code>是一个指向返回值为<code>void</code>的函数的指针。</p>
 </li>
 </ol>
-<p>刚刚我们说了<strong>类型转换符</strong>。那么<code>void (*fp)()</code>的类型转换符就是<code>void (*)()</code></p>
+<p>刚刚 说了<strong>类型转换符</strong>。那么<code>void (*fp)()</code>的类型转换符就是<code>void (*)()</code></p>
 <p>那么<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">void</span>(*)())<span class="number">0</span>;</span><br></pre></td></tr></table></figure><br>就是将<code>0</code>转换成指向返回值为<code>void</code>的函数的指针</p>
 <p>用<code>typedef</code>更加清晰</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*FP)</span><span class="params">()</span></span>;</span><br><span class="line">(*(FP)<span class="number">0</span>)();</span><br></pre></td></tr></table></figure>
 <p>是不是很有意思？</p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>这是C程序员经常用到的问题，<br/></p>
 <blockquote>
-<p><code>signal</code>函数，接受两个参数，<strong>一个是整数，一个是指向用户提供函数的指针</strong>。这个函数用于捕捉到特定的<code>signal</code><br/><br><code>signal.h</code>的库中signal函数是如何声明的？<br/><br>我们先从用户定义的提供信号处理函数开始：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sigfunc</span><span class="params">(<span class="keyword">int</span> )</span></span>;</span><br></pre></td></tr></table></figure><br>那么我们可以写出一个函数指针<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*sfp)(<span class="keyword">int</span> );</span><br></pre></td></tr></table></figure><br>那么我们可以根据两个参数写出<br/><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">signal(<span class="keyword">int</span>,<span class="keyword">void</span>(*)(<span class="keyword">int</span>));</span><br></pre></td></tr></table></figure><br>因为<code>signal</code>本身也是一个函数且返回值也为<code>void</code>，我们可以用它替换<code>sfp</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*signal(<span class="keyword">int</span>,<span class="keyword">void</span>(*)(<span class="keyword">int</span>)))(<span class="keyword">int</span> );</span><br></pre></td></tr></table></figure><br>同样，我们也可以用<code>typedef</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*HANDLER)</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function">HANDLER <span class="title">signal</span><span class="params">(<span class="keyword">int</span>,HANDLER)</span></span>;</span><br></pre></td></tr></table></figure></p>
+<p><code>signal</code>函数，接受两个参数，<strong>一个是整数，一个是指向用户提供函数的指针</strong>。这个函数用于捕捉到特定的<code>signal</code><br/><br><code>signal.h</code>的库中signal函数是如何声明的？<br/><br> 先从用户定义的提供信号处理函数开始：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sigfunc</span><span class="params">(<span class="keyword">int</span> )</span></span>;</span><br></pre></td></tr></table></figure><br>那么 可以写出一个函数指针<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*sfp)(<span class="keyword">int</span> );</span><br></pre></td></tr></table></figure><br>那么 可以根据两个参数写出<br/><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">signal(<span class="keyword">int</span>,<span class="keyword">void</span>(*)(<span class="keyword">int</span>));</span><br></pre></td></tr></table></figure><br>因为<code>signal</code>本身也是一个函数且返回值也为<code>void</code>， 可以用它替换<code>sfp</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*signal(<span class="keyword">int</span>,<span class="keyword">void</span>(*)(<span class="keyword">int</span>)))(<span class="keyword">int</span> );</span><br></pre></td></tr></table></figure><br>同样， 也可以用<code>typedef</code><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*HANDLER)</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function">HANDLER <span class="title">signal</span><span class="params">(<span class="keyword">int</span>,HANDLER)</span></span>;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 
       
@@ -526,15 +526,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数构结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,6 +694,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":200,"height":200,"hOffset":10,"vOffset":40},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
